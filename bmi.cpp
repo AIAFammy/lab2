@@ -1,17 +1,24 @@
+#include <iostream>
 #include "bmi.h"
-Timer::Timer() { start_ts = 0; }
-Timer::Timer(time_t s) {
-	setStart(s);
+Bmi::Bmi() { height = 0; mass = 0; }
+void Bmi::set(int h,int m) {
+	height = h;
+	mass = m;
+	return;
 }
-void Timer::start() {
-	start_ts = time(NULL);
+int Bmi::geth() {
+	return height;
 }
-void Timer::setStart(time_t ts) {
-	start_ts = ts;
+int Bmi::getm() {
+	return mass;
 }
-time_t Timer::getStart() {
-	return start_ts;
-}
-int Timer::getElapsedTime() {
-	return time(NULL) - getStart();
+int Bmi::getcgy(float bmi) {
+	if(bmi<15) return 1;
+	else if(bmi<16) return 2;
+    else if(bmi<18.5) return 3;
+	else if(bmi<25) return 4;
+    else if(bmi<30) return 5;
+    else if(bmi<35) return 6;
+    else if(bmi<40) return 7;
+    else return 8;	
 }

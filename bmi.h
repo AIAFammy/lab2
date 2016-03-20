@@ -1,13 +1,13 @@
-#include <ctime>
+#include <string>
 using namespace std;
-class Timer {
+class Bmi {
 public:
-	Timer();
-	Timer(time_t s);
-	void start();
-	void setStart(time_t ts);
-	time_t getStart();
-	int getElapsedTime();
+	Bmi();
+	void set(int h,int m); //設定身高值、體重值
+	int geth(); //取得身高
+	int getm(); //取得體重
+	int getcgy(float bmi); //給予BMI值，傳回相對應結果 
 private:
-	time_t start_ts;
+	int height;
+	int mass;
 };
